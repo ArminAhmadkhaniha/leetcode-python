@@ -24,4 +24,22 @@ class Solution:
                 dummy.next = list2
         return tail.next
 
-        
+
+# Test
+from cycle import build_list
+
+def to_list(head):
+    arr = []
+    while head:
+        arr.append(head.val)
+        head = head.next
+    return arr
+
+sol = Solution()
+
+list1 = build_list([1, 2, 4], pos = -1)
+list2 = build_list([1, 3, 4], pos = -1)
+
+merged_head = sol.mergeTwoLists(list1, list2)
+
+print(to_list(merged_head))   # [1, 1, 2, 3, 4, 4]   
